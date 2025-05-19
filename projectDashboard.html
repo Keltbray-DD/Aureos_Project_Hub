@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="https://www.aureos.com/wp-content/uploads/2025/02/AUREOS-FAVicon_512px-x-512px-150x150.png"
+        sizes="32x32">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/projectDashboard.css">
+    <script src="js/variables.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/default.js"></script>
+    <script src="js/map.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/projectDashboard.js"></script>
+
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+    <title>Aureos Project Hub</title>
+</head>
+
+<body>
+    <div class="top-bar">
+        <div class="menuLogoContainer">
+            <div class="menu-container">
+                <!-- Burger Icon -->
+                <div class="burger-icon">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+                <!-- Side Menu -->
+                <div class="side-menu" id="side-menu">
+
+                </div>
+            </div>
+            <img src="https://www.aureos.com/wp-content/themes/keltbray/assets/img/logo/AUREOS_logo_wh.svg"
+                class="logo logo--white" alt="Aureos Logo">
+        </div>
+        <div class="title">
+            <h2>Project Hub - Project Dashboard</h2>
+        </div>
+        <div class="profile-container" id="profileMenu">
+            <img id="userPic" src="https://images.profile.autodesk.com/default/user_X58.png" alt="Profile"
+                class="profile-pic" />
+            <div class="dropdown-menu" id="dropdown">
+                <div><strong>User:</strong>
+                    <p id="userName"></p>
+                </div>
+                <div><strong>Email:</strong>
+                    <p id="userEmail"></p>
+                </div>
+                <div class="logout" onclick="logout()">Logout</div>
+            </div>
+        </div>
+    </div>
+    <!-- <div class="container">
+        <h1>Welcome to the Aureos Project Hub</h1>
+        <p></p>
+    </div> -->
+    <section class="sub hero">
+        <h1 id="heroTitle"></h1>
+        <p>Your central place for project resource, collaboration, and mobilisation.</p>
+    </section>
+    <section class="section">
+        <h2>Key Resources</h2>
+        <div class="resources" id="keyResources">
+            <div class="softwareCard acc disabled" id="accCard">
+                <img src="./assets/media/Autodesk_Construction_Cloud_Logo.png"
+                    alt="" class="">
+            </div>
+            <div class="softwareCard second disabled" id="helixCard">
+                <img src="./assets/media/Helix_logo.svg"
+                    alt="" class="">
+            </div>
+            <div class="softwareCard second disabled" id="prosapienCard">
+                <img src="https://www.pro-sapien.com/wp-content/uploads/2021/01/Pro-Sapien-EHS-Software-Logo-Dark-300W.png"
+                    alt="" class="">
+            </div>
+        </div>
+
+    </section>
+    <div class="dashboard-container">
+        <!-- Quick Links Card -->
+        <div class="quickLinks">
+
+            <h2><i class="fas fa-link"></i> Quick Links</h2>
+            <ul>
+                <li><a href="https://keltbray-dd.github.io/ACC_User_Access_Form/index.html" target="_blank">📄 Project Access Form</a></li>
+                <li><a href="https://keltbray-dd.github.io/Aureos_File_Mapping_Tool/" target="_blank">🗂️ ACC Mapping Tool</a></li>
+                <li><a href="https://keltbray-dd.github.io/Aureos_ACC_Training_Portal/" target="_blank">🎓 ACC Training Portal</a></li>
+                <li><a href="https://keltbray-dd.github.io/Universal_File_Uploader/index.html" target="_blank">📄 File Uploader</a></li>
+                <li><a href="https://teams.microsoft.com/l/team/19%3AexQ3XybGhwrBk63MpD79gaiZoIUphqKO6rJM_nNv8zg1%40thread.tacv2/conversations?groupId=65cfbb3f-d473-4881-b1b0-5f07a3779791&tenantId=917b4d06-d2e9-4759-83a3-e7369ed74e8f"  target="_blank">💬 ACC Community Teams</a></li>
+                <li><a href="https://keltbray-dd.github.io/Tool_List/" target="_blank">🛠️ All Tools...</a></li>
+            </ul>
+            <div class="divider bottom"></div>
+            <div class="settings" id="projectSettings">
+                <a href="./projectSettings.html"><i class="fa-solid fa-gears"></i> Project Settings</a>
+            </div>
+        </div>
+        <div class="projectCard-grid" id="projectCard-grid">
+            <div class="projectCard disabled" id="docsDashCard">
+                <i class="fas fa-folder-open"></i>
+                <h2>Docs Dashboard</h2>
+                <p>Access project MIDPs/MDRs and Drawing Registers.</p>
+            </div>
+
+            <div class="projectCard disabled" id="trainingDashCard">
+                <i class="fas fa-graduation-cap"></i>
+                <h2>Training Dashboard</h2>
+                <p>Track and complete your training modules.</p>
+            </div>
+
+            <div class="projectCard disabled" id="healthCheckDashCard">
+                <i class="fas fa-heartbeat"></i>
+                <h2>Health Check</h2>
+                <p>Project performance, KPIs, and risk summaries.</p>
+            </div>
+
+            <div class="projectCard disabled" id="submittalsDashCard">
+                <i class="fas fa-file-alt"></i>
+                <h2>Submittals Tracker</h2>
+                <p>Monitor submission statuses and due dates.</p>
+            </div>
+
+            <div class="projectCard disabled" id="transmittalsDashCard">
+                <i class="fas fa-paper-plane"></i>
+                <h2>Transmittals Tracker</h2>
+                <p>Review and manage outbound transmittals.</p>
+            </div>
+
+            <div class="projectCard disabled" id="parDashCard">
+                <i class="fas fa-key"></i>
+                <h2>Project Access Requests</h2>
+                <p>View status of access requests</p>
+            </div>
+
+            <div class="projectCard disabled" id="scorecardDashCard">
+                <i class="fas fa-chart-bar"></i>
+                <h2>Scorecards</h2>
+                <p>View/Create Scorecard</p>
+            </div>
+
+            <div class="projectCard disabled" id="riskDashCard">
+                <i class="fas fa-exclamation-triangle"></i>
+                <h2>Risk Dashboard</h2>
+                <p>View project risk dashboard</p>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- <div class="map">
+        <div id="map" style="height: 100%; width: 100%; z-index: 999"></div>
+    </div> -->
+    <div id="feedback">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+        <link rel="stylesheet" href="assets/css/feedback.css">
+        <a href="#" id="feedbackBtn"><i class="fa-solid fa-bug"></i></a>
+
+        <!-- The Modal -->
+        <div id="feedbackModal" class="modal">
+            <div class="feedback-content">
+                <span class="close" id="closeModal">&times;</span>
+                <h2>Tool Feedback</h2>
+                <form id="feedbackForm">
+                    <label for="type" class="buglabel">Type:</label>
+                    <select id="type" name="type" required>
+                        <option value="Bug">Bug</option>
+                        <option value="Feature">Feature Request</option>
+                        <option value="Feedback">General Feedback</option>
+                    </select>
+
+                    <label for="description" class="buglabel">What went wrong?</label>
+                    <textarea id="description" name="description" rows="5" required></textarea>
+
+                    <label for="email">Please enter email so we can contact you if needed</label>
+                    <input type="email" name="email" id="userFeedbackEmail" placeholder="Your email..." required>
+
+                    <label for="screenshot">Attach a screenshot (optional):</label>
+                    <input type="file" id="screenshot" name="screenshot" accept="image/*">
+
+                    <button type="submit" class="feedbackBtn">Submit</button>
+                </form>
+
+            </div>
+        </div>
+    </div>
+    <div id="appInfo"></div>
+
+</body>
+
+</html>

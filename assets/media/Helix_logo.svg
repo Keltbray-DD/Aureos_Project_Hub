@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<svg width="115.507" height="40.19" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
+ <g class="layer">
+  <title>Layer 1</title>
+  <g data-name="Group 443" id="Group_443">
+   <path d="m1793.68,-18696l0,18.08l-22.58,0l0,-18.08l-3.1,0l0,40.19l3.1,0l0,-19.13l22.58,0l0,19.13l3.15,0l0,-40.19l-3.15,0z" data-name="Path 1547" fill="#000000" id="Path_1547" transform="translate(-1768 18696)"/>
+   <rect data-name="Rectangle 193" fill="#000000" height="40.19" id="Rectangle_193" transform="translate(-1700.83 18696)" width="3.1" x="1768" y="-18696"/>
+   <rect data-name="Rectangle 194" fill="#000000" height="29.73" id="Rectangle_194" transform="translate(-1690.34 18706.5)" width="3.1" x="1768" y="-18696"/>
+   <path d="m1930.4,-18696l0.29,5.89l2.52,0l0.28,-5.89l-3.09,0z" data-name="Path 1548" fill="#000000" id="Path_1548" transform="translate(-1852.74 18696)"/>
+   <path d="m1980.64,-18639.86l11.7,12.26l0.01,0.01l2.11,0l0,-2.07l-11.66,-12.21l-0.03,-0.04l-2.13,2.05z" data-name="Path 1549" fill="#000000" id="Path_1549" transform="translate(-1878.95 18667.8)"/>
+   <path d="m1952.06,-18674.13l-2.05,0.01l-0.02,2.11l11.7,12.26l2.14,-2.05l-11.76,-12.31l-0.01,-0.02z" data-name="Path 1550" fill="#000000" id="Path_1550" transform="translate(-1862.96 18684.6)"/>
+   <path d="m1950.03,-18629.67l-0.01,0.01l0,2.07l2.11,0l11.68,-12.24l0.03,-0.03l-2.14,-2.05l-11.67,12.24z" data-name="Path 1551" fill="#000000" id="Path_1551" transform="translate(-1862.97 18667.8)"/>
+   <path d="m1980.67,-18661.83l-0.03,0.03l2.14,2.05l11.67,-12.23l0.01,-0.01l0,-2.13l-2.06,-0.01l-11.73,12.3z" data-name="Path 1552" fill="#000000" id="Path_1552" transform="translate(-1878.95 18684.6)"/>
+   <path d="m1866.81,-18658.81c0,-7.28 -4.99,-15.02 -14.24,-15.02a13.94,13.94 0 0 0 -10.24,4.32a14.88,14.88 0 0 0 -3.99,10.31c0,8.67 6.15,14.96 14.62,14.96a14.26,14.26 0 0 0 8.59,-2.72a12.03,12.03 0 0 0 4.25,-5.68s0.23,-0.71 0.29,-1.01l-2.74,0s-0.07,0.2 -0.21,0.52c-1.27,2.97 -4.59,6.15 -10.12,6.15c-6.74,0 -11.44,-4.44 -11.72,-11.08l25.51,0l0,-0.75zm-25.51,-1.59a11.1,11.1 0 0 1 11.27,-10.69c6.89,0 10.84,5.35 11.21,10.69l-22.48,0z" data-name="Path 1553" fill="#000000" id="Path_1553" transform="translate(-1804.7 18684.4)"/>
+  </g>
+ </g>
+</svg>

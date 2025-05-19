@@ -1,0 +1,373 @@
+.containerMenu {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0px;
+    max-width: 1200px;
+    margin: auto;
+    width: 90%;
+}
+
+.menu {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+    width: 100%;
+    z-index: 999;
+}
+
+.menu .menu-card {
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+    width: 80%;
+    transition: all 0.3s ease;
+    z-index: 900;
+}
+
+.menu .menu-card.complete {
+    background-color: #4CAF50;
+    /* Green for complete */
+    color: white;
+}
+
+.menu .menu-card.in-progress {
+    background-color: #FFC107;
+    /* Yellow for in-progress */
+    color: white;
+}
+
+.menu .menu-card.locked {
+    background-color: #B0BEC5;
+    /* Gray for locked */
+    color: #607D8B;
+    cursor: not-allowed;
+}
+
+.menu .menu-card:hover {
+    transform: scale(1.05);
+}
+
+.menu .menu-card span {
+    display: inline;
+    font-weight: bold;
+}
+
+.startContainer,
+.formContainer {
+    display: none;
+    margin-top: 30px;
+    width: 90%;
+    max-width: 1200px;
+    background: white;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: auto;
+    margin-bottom: 30px;
+}
+
+.startContainer{
+  display: block;
+}
+
+.startContainer h2{
+  text-align: center;
+}
+
+form {
+    /* background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px; */
+  }
+form h2 {
+  border-bottom: 3px solid #0078d7;
+  padding-bottom: 8px;
+  color: #333;
+}
+  label {
+    display: block;
+    margin-top: 1rem;
+  }
+
+  input, select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 0.25rem;
+    border: 1px solid #ccc !important; 
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: larger;
+  }
+
+  input:focus, select:focus {
+    border-color: #007bff !important;
+    outline: none;
+  }
+  input[type="text"]:disabled, select:disabled{
+    cursor: not-allowed;
+  }
+  button[type="submit"] {
+    margin-top: 1.5rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
+  button[type="submit"]:hover {
+    background-color: #218838;
+  }
+
+  button[type="submit"]:disabled {
+    opacity: 0.5;
+    background-color: #888;
+    cursor: not-allowed;
+  }
+  .coords {
+    font-size: 0.9rem;
+    color: #555;
+    margin-top: 0.5rem;
+  }
+
+  .flex-row {
+display: flex;
+gap: 1rem;
+margin-top: 0.5rem;
+}
+
+.flex-row > .field {
+flex: 1;
+display: flex;
+flex-direction: column;
+}
+
+.flex-2 {
+flex: 2;
+}
+
+.flex-1 {
+flex: 1;
+}
+
+input[type="email"], select {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.25rem;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+  }
+
+  .row {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-top: 1rem;
+  }
+
+  .row input[type="email"] {
+    flex: 2;
+  }
+
+  .row select {
+    flex: 1;
+  }
+
+  .row button {
+    padding: 0.4rem 0.7rem;
+    background: #dc3545;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  .row button:hover {
+    background: #c82333;
+  }
+
+  .gallery {
+    margin-top: 2rem;
+  }
+
+  #addRowBtn {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+  }
+
+  #addRowBtn:hover {
+    background: #0056b3;
+  }
+  #addRowBtn,
+  .custom-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 1rem;
+    margin-right: 1rem;
+    font-size: 0.9rem;
+    margin-left: auto;
+    min-height: 40px;
+  }
+  
+  .custom-btn:hover {
+    background-color: #0056b3;
+  }
+  
+.required {
+    color: #c82333;
+    font-size: larger;
+}
+
+.email-wrapper {
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 0.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    min-height: 2.5rem;
+    gap: 0.5rem;
+    margin-top: 0.25rem;
+    background: #fff;
+  }
+
+  .email-wrapper input {
+    border: none;
+    flex: 1;
+    min-width: 150px;
+    outline: none;
+    border: 0 !important;
+  }
+  .email-wrapper:disabled{
+    cursor: not-allowed;
+  }
+  .email-tag {
+    background: #007bff;
+    color: white;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .email-tag button {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  .summary-box {
+    /* background-color: #fff;
+    border-radius: 10px;
+    padding: 25px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    max-width: 950px;
+    margin: auto; */
+  }
+
+  .summary-box h2 {
+    border-bottom: 3px solid #0078d7;
+    padding-bottom: 8px;
+    color: #333;
+  }
+
+  .section {
+    margin-bottom: 15px;
+  }
+
+  .section h3 {
+    color: #0078d7;
+    cursor: default;
+    margin: 5px 0;
+    border-bottom: 1px solid #8a8c8e;
+  }
+
+  .section ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .section li {
+    padding: 0;
+    padding-bottom: 5px;
+  }
+
+  .label {
+    font-weight: 600;
+    color: #555;
+  }
+
+  .team-member {
+    /* margin-left: 20px; */
+    font-size: 14px;
+    color: #333;
+    border-bottom: 1px solid #bbbbbba4;
+  }
+
+  .team-toggle {
+    cursor: pointer;
+    color: #e67e22;
+    font-weight: 600;
+    margin-top: 5px;
+    display: inline-block;
+  }
+
+  .team-members {
+    display: none;
+    margin-top: 10px;
+  }
+
+  .sumbitBtn{
+    margin-top: 1.5rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: auto;
+  }
+
+
+  .sumbitBtn:hover {
+    background-color: #218838;
+  }
+
+  .sumbitBtn:disabled {
+    opacity: 0.5;
+    background-color: #888;
+    cursor: not-allowed;
+  }
+
+    /* Responsive for smaller screens */
+    @media (max-width: 700px) {
+      .menu {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: 20px;
+        width: 100%;
+        z-index: 999;
+    }
+    .menu .menu-card {
+      width: 90%;
+      margin: auto;
+  }
+    }

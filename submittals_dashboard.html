@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="https://www.aureos.com/wp-content/uploads/2025/02/AUREOS-FAVicon_512px-x-512px-150x150.png"
+    sizes="32x32">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/submittalsDashboard.css">
+  <script src="js/variables.js"></script>
+  <script src="js/default.js"></script>
+  <script src="js/login.js"></script>
+  <script src="js/submittalsDashboard.js"></script>
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+  <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+  <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+  <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+
+  <!-- Bootstrap JS (for modal) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <title>Aureos Project Hub</title>
+</head>
+
+<body>
+  <div class="top-bar">
+    <div class="menuLogoContainer">
+      <div class="menu-container">
+        <!-- Burger Icon -->
+        <div class="burger-icon">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <!-- Side Menu -->
+        <div class="side-menu" id="side-menu">
+
+        </div>
+      </div>
+      <img src="https://www.aureos.com/wp-content/themes/keltbray/assets/img/logo/AUREOS_logo_wh.svg"
+        class="logo logo--white" alt="Aureos Logo">
+    </div>
+    <div class="title">
+      <h2>Project Hub - Submittals Dashboard</h2>
+    </div>
+    <div class="profile-container" id="profileMenu">
+      <img id="userPic" src="https://images.profile.autodesk.com/default/user_X58.png" alt="Profile"
+        class="profile-pic" />
+      <div class="dropdown-menu" id="dropdown">
+        <div><strong>User:</strong>
+          <p id="userName"></p>
+        </div>
+        <div><strong>Email:</strong>
+          <p id="userEmail"></p>
+        </div>
+        <div class="logout" onclick="logout()">Logout</div>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="container">
+        <h1>Welcome to the Aureos Project Hub</h1>
+        <p></p>
+    </div> -->
+  <section class="sub hero">
+    <h1 id="heroTitle">Welcome to Project Hub</h1>
+    <p>Your central place for project resource, collaboration, and mobilisation.
+    </p>
+  </section>
+
+<section class="section">
+    <select id="monthSelect"></select>
+    <h2>Overview</h2>
+      <div class="charts" id="overviewChartContainer" style="display:none !important">
+        <div class="monthlyPieChart">
+            <canvas id="statusPieChartOverview"></canvas>
+        </div>
+        <canvas id="monthBarChartOverview" ></canvas>
+        <div class="monthlyPieChart">
+            <canvas id="statusOverallPieChartOverview"></canvas>
+        </div>
+    </div>
+    <div id="overviewChartLoadingSpinner" class="loadingSpinnerContainer">
+      <div class="spinner"></div>
+      <p>Loading Charts...</p>
+    </div>
+    <div id="notDataOverview" class="noDataContainer">
+      <p>No Data for this section</p>
+    </div>
+</section>
+
+<section class="section">
+  <h2>Detailed Design</h2>
+      <div class="charts" id="detailedChartContainer" style="display:none !important">
+        <div class="monthlyPieChart">
+            <canvas id="statusPieChartDetailed" class=""></canvas>
+        </div>
+        <canvas id="monthBarChartDetailed" ></canvas>
+    </div>
+        <div id="detailedLoadingSpinner" class="loadingSpinnerContainer">
+      <div class="spinner"></div>
+      <p>Loading Charts...</p>
+    </div>
+    <div id="notDataDetailed" class="noDataContainer">
+      <p>No Data for this section</p>
+    </div>
+</section>
+
+<section class="section">
+    <h2>Feasibility Design</h2>
+      <div class="charts" id="feasibilityChartContainer" style="display:none !important">
+        <div class="monthlyPieChart">
+            <canvas id="statusPieChartFeasibility"></canvas>
+        </div>
+        <canvas id="monthBarChartFeasibility" ></canvas>
+    </div>
+        <div id="feasibilityLoadingSpinner" class="loadingSpinnerContainer">
+      <div class="spinner"></div>
+      <p>Loading Charts...</p>
+    </div>
+    <div id="notDataFeasibility" class="noDataContainer">
+      <p>No Data for this section</p>
+    </div>
+</section>
+
+<section class="section">
+    <div class="percentages">
+        <div id="statusSummary" class="status-summary"></div>
+    </div>
+</section>
+
+<section class="section">
+        <div class="submittals-dropdown">
+        <button onclick="clearFilters()" class="submittals-optionbtn">Clear Filters</button>
+        <button onclick="toggleDropdown()" class="submittals-optionbtn">Select Columns</button>
+        <div id="columnToggles" class="submittals-dropdown-content"></div>
+        </div>
+        <table id="itemsTable" class="display" style="width:100%">
+        <thead></thead>
+        <tbody></tbody>
+        </table>
+</section>
+
+  <div id="feedback">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/feedback.css">
+    <a href="#" id="feedbackBtn"><i class="fa-solid fa-bug"></i></a>
+
+    <!-- The Modal -->
+    <div id="feedbackModal" class="modal">
+      <div class="feedback-content">
+        <span class="close" id="closeModal">&times;</span>
+        <h2>Tool Feedback</h2>
+        <form id="feedbackForm">
+          <label for="type" class="buglabel">Type:</label>
+          <select id="type" name="type" required>
+            <option value="Bug">Bug</option>
+            <option value="Feature">Feature Request</option>
+            <option value="Feedback">General Feedback</option>
+          </select>
+
+          <label for="description" class="buglabel">What went wrong?</label>
+          <textarea id="description" name="description" rows="5" required></textarea>
+
+          <label for="email">Please enter email so we can contact you if needed</label>
+          <input type="email" name="email" id="userFeedbackEmail" placeholder="Your email..." required>
+
+          <label for="screenshot">Attach a screenshot (optional):</label>
+          <input type="file" id="screenshot" name="screenshot" accept="image/*">
+
+          <button type="submit" class="feedbackBtn">Submit</button>
+        </form>
+
+      </div>
+    </div>
+  </div>
+  <div id="appInfo"></div>
+
+</body>
+
+</html>

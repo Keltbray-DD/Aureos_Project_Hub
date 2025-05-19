@@ -1,0 +1,178 @@
+.dashboard-container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  display: flex;
+  gap: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #2c3e50;
+}
+
+.projectCard-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+@media (max-width: 950px) {
+  .projectCard-grid {
+    grid-template-columns: repeat(2, minmax(250px, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .projectCard-grid {
+    grid-template-columns: repeat(1, minmax(250px, 1fr));
+  }
+}
+
+.projectCard {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  padding: 30px 20px;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.4s ease, filter 0.4s ease;
+  cursor: pointer;
+}
+
+.projectCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.projectCard i {
+  font-size: 30px;
+  margin-bottom: 15px;
+  color: #007bff;
+}
+
+.projectCard h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #2c3e50;
+}
+
+.projectCard p {
+  color: #666;
+  font-size: 14px;
+}
+
+.projectCard a {
+  display: inline-block;
+  margin-top: 15px;
+  color: #007bff;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.projectCard a:hover {
+  text-decoration: underline;
+}
+
+.quickLinks {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  padding: 10px 20px;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-align: left;
+  min-width: 15vw;
+}
+
+.quickLinks ul {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 0 0;
+}
+
+.quickLinks ul li a {
+  display: block;
+  margin: 8px 0;
+  color: #007bff;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.quickLinks ul li a:hover {
+  /* text-decoration: underline; */
+  cursor: pointer;
+  transform: scale(1.05);
+}
+
+.section {
+  position: relative;
+  max-width: 1160px;
+}
+
+.section h2 {
+  width: 100%;
+}
+
+.resources {
+  display: flex;
+  gap: 30px;
+}
+
+.softwareCard {
+  display: flex;
+  flex: 1;
+  border-radius: 10px;
+  /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); */
+  transition: transform 0.2s ease, opacity 0.4s ease, filter 0.4s ease;
+  cursor: pointer;
+}
+
+.softwareCard:hover {
+  transform: scale(1.02);
+}
+
+.second img,
+.acc img {
+  max-width: 100%;
+  padding: 10px;
+  max-height: 80px;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+.softwareCard h2 {
+  margin: auto;
+  margin-left: 20px;
+}
+
+.softwareCard a {
+  text-decoration: none;
+}
+
+.disabled {
+  opacity: 0.4;
+  filter: grayscale(100%);
+  pointer-events: none;
+  /* disables clicking */
+  cursor: not-allowed;
+    transition: transform 0.5s ease;
+}
+
+.bottom{
+  margin-top: auto;
+}
+
+.settings a{
+  display: block;
+  margin: 8px 0;
+  text-decoration: none;
+  color: #007bff;
+  bottom: 0;
+}
+
+.settings a:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+}
+

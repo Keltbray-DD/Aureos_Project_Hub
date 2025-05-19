@@ -1,0 +1,169 @@
+/* Width of the scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+/* Track (background) of the scrollbar */
+::-webkit-scrollbar-track {
+    background: transparent
+}
+
+/* Thumb (scroll handle) styling */
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 6px;
+}
+
+/* Thumb hover effect */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Basic reset */
+body,
+html {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background: rgb(255, 255, 255);
+    background: linear-gradient(158deg, rgba(255, 255, 255, 1) 0%, rgba(59, 219, 135, 1) 37%, rgba(111, 188, 247, 1) 65%, rgba(4, 113, 190, 1) 100%);
+}
+
+/* Filter container styling (fixed at top of left panel) */
+#filter-container {
+    position: sticky;
+    top: 0;
+    background-color: #f9f9f9;
+    z-index: 100;
+    padding: 10px;
+    padding-bottom: 10px;
+
+}
+
+/* Main container as a flex layout */
+#container {
+    display: flex;
+    height: 60vh;
+    padding: 30px;
+    gap: 10px;
+}
+
+/* Left panel styling (30% width) */
+#left-panel {
+    background: white;
+    border-radius: 15px;
+    /* Rounded edges */
+    width: 30%;
+    border-right: 1px solid #ddd;
+    overflow-y: auto;
+
+    background-color: #f9f9f9;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    /* Soft shadow */
+}
+
+#left-panel h2 {
+    padding: 10px;
+    margin: 0;
+    margin-top: 10px;
+}
+
+/* Right panel styling (70% width) */
+#right-panel {
+    width: 70%;
+    padding: 20px;
+    overflow-y: auto;
+    background: white;
+    border-radius: 15px;
+    /* Rounded edges */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    /* Soft shadow */
+}
+
+#right-panel h2{
+    margin-top: 0;
+}
+
+/* Search input styling */
+#searchInput {
+    width: 100%;
+    padding: 8px;
+    /* margin-bottom: 10px; */
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Dropdown styling */
+#projectDropdown {
+    width: 95%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* Request list styling */
+#requestList {
+    padding-left: 10px;
+    margin-top: 0;
+}
+
+#requestList li {
+    list-style: none;
+    padding: 10px;
+
+    margin-bottom: 5px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+}
+
+#requestList li:hover {
+    background-color: #f2f2f2;
+}
+
+#requestList li.active {
+    background-color: #ddd;
+}
+
+/* Progress diagram styles */
+.progress-container {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.progress-step {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    position: relative;
+    z-index: 1;
+}
+
+.progress-step.active {
+    border-color: #4CAF50;
+    background-color: #4CAF50;
+    color: white;
+}
+
+.progress-bar {
+    flex: 1;
+    height: 2px;
+    background-color: #ccc;
+    margin: 0 5px;
+    position: relative;
+    top: -15px;
+    z-index: 0;
+    margin-top: 28px;
+}
+
+.progress-bar.active {
+    background-color: #4CAF50;
+}
