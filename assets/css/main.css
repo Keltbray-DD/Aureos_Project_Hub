@@ -867,3 +867,56 @@ input[type="text"]:disabled, select:disabled{
 .noDataContainer p{
   margin-left: 10px;
 }
+.underConstructionContainer{
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fefefe;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  color: #333;
+}
+    .construction-sign {
+      font-size: 5rem;
+      animation: bounce 1.5s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-20px);
+      }
+    }
+
+    .underConstructionContainer h1 {
+      margin-top: 20px;
+      font-size: 2.5rem;
+    }
+
+    .underConstructionContainer p {
+      font-size: 1.1rem;
+      color: #666;
+      max-width: 400px;
+    }
+
+    .gear {
+      font-size: 4rem;
+      color: #facc15;
+      animation: gear 4s linear infinite;
+      margin-top: 20px;
+    }
+
+    @keyframes gear {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }

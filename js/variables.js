@@ -1,10 +1,11 @@
 const appName = "Aureos Project Hub";
-const appVersion = "v0.1.0 ALPHA";
+const appVersion = "v0.1.1 ALPHA";
 
 const account_id = "24d2d632-e01b-4ca0-b988-385be827cb04"
 const default_project_id = "bc44c453-d23a-46ce-8b83-6bea9e90c4b9"
 let accessToken
 
+let devMode = true
 let appPermissions
 let userEmail
 
@@ -91,6 +92,12 @@ let monthMap = {}; // e.g. { '2024-04': [...], '2024-05': [...] }
 let accessData;
 let filteredAccessData
 
+// Overview Dashboards
+
+let overviewData
+let overviewFileData = []
+let accountUserList
+
 // General Arrays
 
 let projectList
@@ -157,4 +164,10 @@ let menuOptions = [
     {title:'Home',link:'./index.html'},
     {title:'My Requests',link:'./myRequestDashboard.html'},
  ]
-  
+
+// Login Variables
+
+let userDetails
+let userAccessToken
+let toolURL
+let fullURL

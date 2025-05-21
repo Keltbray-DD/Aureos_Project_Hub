@@ -1,0 +1,95 @@
+.tab-bar {
+  display: flex;
+  border-bottom: 2px solid #ccc;
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  background-color: #f1f1f1;
+  border-radius: 6px 6px 0 0;
+  overflow: hidden;
+  max-width: 1200px;
+
+}
+
+.tab-button {
+  /* flex: 1; */
+  width: 33%;
+  padding: 12px 20px;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  font-size: 16px;
+  transition: background-color 0.2s, color 0.2s;
+  margin: auto;
+  text-decoration: none;  
+  outline: none;         
+  color: inherit;         
+  text-align: center;
+}
+
+.tab-button i {
+  margin-right: 8px;
+}
+
+.tab-button:hover {
+  background-color: #e0e0e0;
+}
+
+.tab-button.active {
+  background-color: white;
+  border-bottom: 2px solid white;
+  font-weight: bold;
+  color: #2a5d9f;
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.section{
+    margin-top: 10px;
+}
+
+.training-dashboard-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.training-card {
+  flex: 1;
+  min-width: 200px;
+  background: white;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.training-card h3 {
+  margin-top: 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+.training-card p {
+  font-size: 1.5rem;
+  margin: 0.5rem 0;
+}
+
+.training-card small {
+  color: #666;
+}
+
+.legacy {
+  background-color: #f1f1f1;
+}
+
+.new {
+  background-color: #e3f2fd;
+}

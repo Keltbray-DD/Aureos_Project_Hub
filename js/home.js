@@ -26,6 +26,10 @@ document.addEventListener("DOMContentLoaded", async function () {
     document.getElementById('requestMobilisation').addEventListener('click', function (){
       location.href='./requestHome.html'
     })
+    
+    document.getElementById('overviewDashboards').addEventListener('click', function (){
+      location.href='./overviewDashboards.html'
+    })
 })
 
 async function generateMyProjects(projectArray) {
