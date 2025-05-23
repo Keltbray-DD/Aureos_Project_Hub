@@ -18,7 +18,7 @@
   <!-- Leaflet JS -->
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
-  <title>Aureos Project Mobilisation</title>
+  <title>Aureos Project Hub - Health Check</title>
 </head>
 
 <body>
@@ -97,6 +97,10 @@
     </thead>
     <tbody id="metadataTableBody"></tbody>
   </table>
+    <div id="metadataTableLoadingSpinner" class="loadingSpinnerContainer">
+      <div class="spinner"></div>
+      <p>Loading...</p>
+    </div>
 
   <h2>User Compliance</h2>
   <table>
@@ -111,6 +115,10 @@
     </thead>
     <tbody id="uploaderTableBody"></tbody>
   </table>
+    <div id="uploaderTableLoadingSpinner" class="loadingSpinnerContainer">
+      <div class="spinner"></div>
+      <p>Loading...</p>
+    </div>
 
   <h2>Non-Compliant Files</h2>
     <table>
@@ -127,9 +135,15 @@
       </thead>
       <tbody id="nonCompliantTableBody"></tbody>
     </table>
+        <div id="nonCompliantTableLoadingSpinner" class="loadingSpinnerContainer">
+      <div class="spinner"></div>
+      <p>Loading...</p>
+    </div>
   </section>
 
-
+  <div id="loading" class="loading-spinner">
+    Loading...
+  </div>
   <div id="feedback">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="assets/css/feedback.css">

@@ -47,6 +47,8 @@ let metadataCompliance
 let healthData
 let uniqueUploaders
 let nonCompliantFiles = []
+const excludedNames = ['josh cole', 'dan brain'];
+
 
 // Training Variables
 

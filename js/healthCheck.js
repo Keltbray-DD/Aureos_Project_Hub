@@ -16,6 +16,7 @@ document.addEventListener("DOMContentLoaded", async function () {
     document.getElementById('heroTitle').innerText = `${projectName}`
     sessionStorage.setItem('projectName',projectName)
   }
+  await showLoadingSpinner()
   projectFileData = JSON.parse(sessionStorage.getItem('projectFileData'))
   console.log(projectFileData)
   await processFileData(projectFileData)
@@ -25,7 +26,7 @@ document.addEventListener("DOMContentLoaded", async function () {
   inProjectArea = true
   console.log('inProjectArea',inProjectArea)
   generateMenu()
-
+  await hideLoadingSpinner()
 })
 
 async function processFileData(fileData) {
@@ -82,7 +83,11 @@ async function processFileData(fileData) {
     filesLength = singleFileList.length
     failedFilesLength = failedFiles.length
     uniqueUploaders = [...new Set(singleFileList.map(file => file.created_by))];
-}
+
+    uniqueUploaders = uniqueUploaders.filter(
+      user => !excludedNames.includes(user.toLowerCase())
+    );
+    }
 
 async function convertToPercentage(count, total) {
     if (!total || total === 0) return 0;
@@ -188,6 +193,7 @@ async function generateHealthCheckTables() {
       `;
       tbody.appendChild(row);
     });
+    document.getElementById('metadataTableLoadingSpinner').style.display = 'none'
   }
 
   // Populate Uploader Breakdown table
@@ -206,6 +212,7 @@ async function generateHealthCheckTables() {
       `;
       tbody.appendChild(row);
     });
+    document.getElementById('uploaderTableLoadingSpinner').style.display = 'none'
   }
 
   // Populate Non-Compliant Files table
@@ -224,6 +231,7 @@ async function generateHealthCheckTables() {
       `;
       tbody.appendChild(row);
     });
+    document.getElementById('nonCompliantTableLoadingSpinner').style.display = 'none'
   }
 
 async function groupItemData(data) {

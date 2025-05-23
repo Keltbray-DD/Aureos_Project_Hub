@@ -71,21 +71,7 @@ async function getProjectList(type) {
       .catch((error) => console.error("Error fetching data:", error));
     return responseData;
   }
-  async function showLoadingSpinner(element) {
-    const loadingSpinner = document.getElementById('loading');
-  
-    // Show the loading spinner
 
-    loadingSpinner.style.display = 'block';
-  }
-  
-  async function hideLoadingSpinner(element) {
-    const loadingSpinner = document.getElementById('loading');
-  
-    // Show the loading spinner
-    loadingSpinner.style.display = 'none';
-
-  }
   function delay(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
 }
