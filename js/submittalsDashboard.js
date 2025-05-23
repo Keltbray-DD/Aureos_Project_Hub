@@ -18,6 +18,10 @@ document.addEventListener("DOMContentLoaded", async function () {
     }
 
     generateSubmittalDashboards()
+    
+    inProjectArea = true
+    console.log('inProjectArea',inProjectArea)
+    generateMenu()
 })
 
 function clearFilters() {

@@ -30,6 +30,9 @@ document.addEventListener("DOMContentLoaded", async function () {
     document.getElementById('overviewDashboards').addEventListener('click', function (){
       location.href='./overviewDashboards.html'
     })
+
+    inProjectArea = false
+    console.log('inProjectArea',inProjectArea)
 })
 
 async function generateMyProjects(projectArray) {
@@ -65,6 +68,8 @@ function setProjectId(event) {
   projectName = event.currentTarget.getAttribute('data-project-name');
   sessionStorage.setItem('projectName',projectName)
   console.log("Selected Project ID:", projectId);
+  inProjectArea = true
+  sessionStorage.setItem('inProjectArea',inProjectArea)
   location.href=`./projectDashboard.html?id=${projectId}`
 }
 

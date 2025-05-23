@@ -23,6 +23,10 @@ document.addEventListener("DOMContentLoaded", async function () {
     console.log(rolesData)
     generateMembersTable()
     generateStatusBar()
+
+    inProjectArea = true
+    console.log('inProjectArea',inProjectArea)
+    generateMenu()
 })
 
 async function generateStatusBar() {

@@ -1,5 +1,5 @@
 const appName = "Aureos Project Hub";
-const appVersion = "v0.1.1 ALPHA";
+const appVersion = "v0.1.2 ALPHA";
 
 const account_id = "24d2d632-e01b-4ca0-b988-385be827cb04"
 const default_project_id = "bc44c453-d23a-46ce-8b83-6bea9e90c4b9"
@@ -13,6 +13,7 @@ let userEmail
 
 let projectId
 let projectName
+let inProjectArea = false
 
 let projectDataDash
 let projectFileData

@@ -8,6 +8,10 @@ document.addEventListener("DOMContentLoaded", async function () {
     await renderRequestList(filteredAccessData);
     // Attach event listeners to search input and project dropdown
     document.getElementById("searchInput").addEventListener("input", updateList);
+    
+    inProjectArea = true
+    console.log('inProjectArea',inProjectArea)
+    generateMenu()
 })
 
 // Replace with your actual API endpoint if needed

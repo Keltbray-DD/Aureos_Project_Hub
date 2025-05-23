@@ -17,6 +17,10 @@ document.addEventListener("DOMContentLoaded", async function () {
       sessionStorage.setItem('projectName',projectName)
     }
 
+    inProjectArea = true
+    console.log('inProjectArea',inProjectArea)
+    generateMenu()
+
     accLink = `https://acc.autodesk.eu/docs/files/projects/${projectId}`
     helixLink = projectDataDash.project_details[0].helixLink || null
     prosapienLink = projectDataDash.project_details[0].prosapien_link || null

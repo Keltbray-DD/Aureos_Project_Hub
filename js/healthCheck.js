@@ -22,6 +22,10 @@ document.addEventListener("DOMContentLoaded", async function () {
   generateHealthCheckTables()
   generateSummaryCards()
 
+  inProjectArea = true
+  console.log('inProjectArea',inProjectArea)
+  generateMenu()
+
 })
 
 async function processFileData(fileData) {

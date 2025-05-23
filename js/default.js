@@ -1,5 +1,6 @@
 document.addEventListener("DOMContentLoaded", async function () {
     document.getElementById("appInfo").textContent = `${appName} ${appVersion}`;
+    inProjectArea = sessionStorage.getItem('inProjectArea')
     generateMenu()
 
     // Feeback Button
@@ -67,20 +68,50 @@ function toBase64(file) {
         reader.onerror = error => reject(error);
     });
 }
+
+})
+
 async function generateMenu(params) {
     const sideBarOptions = document.getElementById('side-menu')
+    sideBarOptions.innerHTML = ''
     menuOptions = [
        {title:'Home',link:'./index.html'},
-       {title:'My Requests',link:'./myRequestDashboard.html'},
+       {title:'Request Mobilisation',link:'./requestHome.html'},
+       {title:'Overview Dashboards',link:'./overviewDashboards.html'},
     ]
+    const heading = document.createElement('h3')
+    heading.innerText = `Main Menu`
+    sideBarOptions.appendChild(heading)
     menuOptions.forEach(element => {
        const menuOption = document.createElement('a')
        menuOption.href = element.link
        menuOption.textContent = element.title
        sideBarOptions.appendChild(menuOption)
     });
+
+    if(inProjectArea === true){
+        const heading = document.createElement('h3')
+        heading.innerText = `Project Menu`
+        sideBarOptions.appendChild(heading)
+
+        projectMenuOptions = [
+            {title:'Project Home',link:`./projectDashboard.html?id=${projectId}`},
+            {title:'Docs Dashboard',link:`https://keltbray-dd.github.io/Project_Dashboards/index.html`},
+            {title:'Training Dashboards',link:`./training_dashboard.html?id=${projectId}`},
+            {title:'Health Check',link:`./health_check.html?id=${projectId}`},
+            {title:'Submittals Tracker',link:`./submittals_dashboard.html?id=${projectId}`},
+            {title:'Transmittals Tracker',link:`./transmittals_dashboard.html?id=${projectId}`},
+            {title:'Project Access Requests',link:`./project_access_requests.html?id=${projectId}`},
+        ]
+
+        projectMenuOptions.forEach(element => {
+            const menuOption = document.createElement('a')
+            menuOption.href = element.link
+            menuOption.textContent = element.title
+            sideBarOptions.appendChild(menuOption)
+        });
+    }
 }
-})
 
 async function getAccessToken(scopeInput){
 

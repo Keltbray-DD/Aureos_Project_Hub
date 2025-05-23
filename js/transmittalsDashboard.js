@@ -16,4 +16,8 @@ document.addEventListener("DOMContentLoaded", async function () {
       document.getElementById('heroTitle').innerText = `${projectName}`
       sessionStorage.setItem('projectName',projectName)
     }
+
+    inProjectArea = true
+    console.log('inProjectArea',inProjectArea)
+    generateMenu()
 })

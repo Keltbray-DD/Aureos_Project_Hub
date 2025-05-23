@@ -631,12 +631,23 @@ input[type="text"]:disabled, select:disabled{
   box-shadow: 2px 0 5px rgba(0,0,0,0.2);
   transform: translateX(-220px);
   transition: transform 0.3s ease;
-  padding-top: 60px;
+  padding-top: 30px;
   z-index: 1000;
 }
 
 .menu-container:hover .side-menu {
   transform: translateX(-20px);
+}
+
+.side-menu h3 {
+  margin: 0;
+  display: block;
+  padding: 15px 10px;
+  color: #333;
+  text-decoration: none;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 10px;
+  padding-top: 20px;
 }
 
 .side-menu a {
